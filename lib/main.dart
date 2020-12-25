@@ -1,9 +1,14 @@
+import 'package:firebase_core/firebase_core.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:flutter/material.dart';
 import 'app/home/home_page.dart';
 import 'routing/app_router.dart';
 
-void main() {
+void main() async {
   //WidgetsFlutterBinding.ensureInitialized(); //비동기 데이터 처리 시
+  await Firebase.initializeApp();
+  final sharedPreferences =
+      await SharedPreferences.getInstance(); //To initialize FlutterFire
   runApp(MyApp());
 }
 
