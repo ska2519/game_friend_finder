@@ -11,8 +11,8 @@ class HomePage extends StatefulWidget {
   _HomePageState createState() => _HomePageState();
 }
 
-class _HomePageState extends State<HomePage> {
-  //final TabController _tabController;
+class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
+  TabController _tabController;
   int _selectedIndex = 0;
 
   List<Widget> screens = [
@@ -28,46 +28,50 @@ class _HomePageState extends State<HomePage> {
     TabItem.chat: GlobalKey<NavigatorState>(),
     TabItem.account: GlobalKey<NavigatorState>(),
   };
+
   void _onItemTapped(int index) {
     setState(() => _selectedIndex = index);
   }
 
   @override
+  void initState() {
+    _tabController = TabController(
+      length: screens.length,
+      vsync: this,
+      initialIndex: _selectedIndex,
+    );
+    super.initState();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        toolbarHeight: 50,
+        backgroundColor: Colors.grey[50],
+        bottom: TabBar(
+          controller: _tabController,
+          onTap: _onItemTapped,
+          labelColor: Color(0xFFFE3C72),
+          unselectedLabelColor: Colors.grey,
+          indicatorColor: Colors.white,
+          tabs: [
+            _buildItem(TabItem.swipe),
+            _buildItem(TabItem.like),
+            _buildItem(TabItem.chat),
+            _buildItem(TabItem.account),
+          ],
+        ),
+      ),
       body: IndexedStack(
         index: _selectedIndex,
         children: screens,
       ),
-      bottomNavigationBar: BottomNavigationBar(
-        type: BottomNavigationBarType.fixed,
-        onTap: _onItemTapped,
-        backgroundColor: Colors.white,
-        showSelectedLabels: true,
-        selectedLabelStyle: TextStyle(color: Colors.black),
-
-        //fixedColor: Colors.yellowAccent,
-        selectedItemColor: Colors.redAccent,
-        //unselectedItemColor: Colors.grey,
-        selectedFontSize: 13,
-        unselectedFontSize: 13,
-        items: [
-          _buildItem(TabItem.swipe),
-          _buildItem(TabItem.like),
-          _buildItem(TabItem.chat),
-          _buildItem(TabItem.account),
-        ],
-        currentIndex: _selectedIndex,
-      ),
     );
   }
 
-  BottomNavigationBarItem _buildItem(TabItem tabItem) {
+  Tab _buildItem(TabItem tabItem) {
     final itemData = TabItemData.allTabs[tabItem];
-
-    return BottomNavigationBarItem(
-      icon: Icon(itemData.icon),
-      label: itemData.label,
-    );
+    return Tab(icon: Icon(itemData.icon));
   }
 }

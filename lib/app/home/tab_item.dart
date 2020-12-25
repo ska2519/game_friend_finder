@@ -26,7 +26,7 @@ class TabItemData {
     TabItem.like: TabItemData(
       key: Keys.likeTab,
       label: Strings.like,
-      icon: LineAwesomeIcons.comments,
+      icon: LineAwesomeIcons.heartbeat,
     ),
     TabItem.chat: TabItemData(
       key: Keys.likeTab,

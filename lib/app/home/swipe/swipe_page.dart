@@ -8,6 +8,10 @@ class SwipePage extends StatefulWidget {
 class _SwipePageState extends State<SwipePage> {
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Container(
+      child: Center(
+        child: Text('SwipePage'),
+      ),
+    );
   }
 }
