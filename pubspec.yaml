@@ -9,15 +9,34 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  alert_dialogs:
+    git:
+      url: https://github.com/ska2519/codewithandrea_flutter_packages
+      path: packages/alert_dialogs
+  custom_buttons:
+    git:
+      url: https://github.com/ska2519/codewithandrea_flutter_packages
+      path: packages/custom_buttons
+  email_password_sign_in_ui:
+    git:
+      url: https://github.com/ska2519/codewithandrea_flutter_packages
+      path: packages/email_password_sign_in_ui
+  firestore_service:
+    git:
+      url: https://github.com/ska2519/codewithandrea_flutter_packages
+      path: packages/firestore_service
+
   cupertino_icons: ^1.0.1
   font_awesome_flutter:
   line_awesome_flutter:
 
+  logger: ^0.9.4
   firebase_core: ^0.5.3
   firebase_auth: ^0.18.4
-
+  flutter_riverpod: ^0.12.1
   shared_preferences: ^0.5.12+4
-  
+  intl: ^0.16.1
+  flutter_svg: ^0.19.2+1  
 
 
 dev_dependencies:
