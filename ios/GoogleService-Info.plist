@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>480349618006-afo2udfcui53ct21e0tqru7a7leuhp3d.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.480349618006-afo2udfcui53ct21e0tqru7a7leuhp3d</string>
+	<key>ANDROID_CLIENT_ID</key>
+	<string>480349618006-7jjlk3jlmvqs6vfucvqca2kraeh4mfa4.apps.googleusercontent.com</string>
+	<key>API_KEY</key>
+	<string>AIzaSyDdiQslh40EE6OUC65Y0SQhumh1z3lw3FM</string>
+	<key>GCM_SENDER_ID</key>
+	<string>480349618006</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.ska.gameFriendFinder</string>
+	<key>PROJECT_ID</key>
+	<string>game-friend-finder</string>
+	<key>STORAGE_BUCKET</key>
+	<string>game-friend-finder.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:480349618006:ios:57a7c92175b1638374e0f7</string>
+</dict>
+</plist>
