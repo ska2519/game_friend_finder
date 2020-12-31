@@ -222,8 +222,8 @@ packages:
     description:
       path: "packages/firestore_service"
       ref: HEAD
-      resolved-ref: b3a1d31adcf43378781ca4314d0a98923b65b1b4
-      url: "https://github.com/bizz84/codewithandrea_flutter_packages"
+      resolved-ref: bd033049c0ee267f26f5566e057dd2c0f888b26d
+      url: "https://github.com/ska2519/codewithandrea_flutter_packages"
     source: git
     version: "0.1.0"
   flutter:
@@ -286,6 +286,27 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.2.0"
+  google_sign_in:
+    dependency: "direct main"
+    description:
+      name: google_sign_in
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "4.5.6"
+  google_sign_in_platform_interface:
+    dependency: transitive
+    description:
+      name: google_sign_in_platform_interface
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "1.1.2"
+  google_sign_in_web:
+    dependency: transitive
+    description:
+      name: google_sign_in_web
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.9.2"
   http_parser:
     dependency: transitive
     description:

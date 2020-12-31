@@ -45,9 +45,10 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
 
   @override
   Widget build(BuildContext context) {
+    Size size = MediaQuery.of(context).size;
     return Scaffold(
       appBar: AppBar(
-        toolbarHeight: 50,
+        toolbarHeight: size.height * 0.07,
         backgroundColor: Colors.grey[50],
         bottom: TabBar(
           controller: _tabController,

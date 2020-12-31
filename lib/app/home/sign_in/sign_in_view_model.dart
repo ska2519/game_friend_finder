@@ -1,16 +1,18 @@
 import 'dart:async';
 
 import 'package:firebase_auth/firebase_auth.dart';
+
 import 'package:flutter/foundation.dart';
-import 'package:meta/meta.dart';
+import 'package:game_friend_finder/services/auth_service.dart';
 
 class SignInViewModel with ChangeNotifier {
   SignInViewModel({@required this.auth});
   final FirebaseAuth auth;
+  final AuthService authService = AuthService();
   bool isLoading = false;
   dynamic error;
 
-  Future<void> _signIn(Future<UserCredential> Function() signInMethod) async {
+  Future<void> _signIn(Future<AppUser> Function() signInMethod) async {
     try {
       isLoading = true;
       notifyListeners();
@@ -25,7 +27,11 @@ class SignInViewModel with ChangeNotifier {
     }
   }
 
-  Future<void> signInAnonymously() async {
-    await _signIn(auth.signInAnonymously);
+  Future<void> signInWithGoogle() async {
+    await _signIn(authService.signInWithGoogle);
+  }
+
+  Future<void> signOut() async {
+    await auth.signOut();
   }
 }

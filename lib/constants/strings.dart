@@ -1,4 +1,5 @@
 class Strings {
+  static const String gameFrindFinder = '게임 친구 찾기';
   // Generic strings
   static const String ok = 'OK';
   static const String cancel = 'Cancel';
@@ -10,11 +11,10 @@ class Strings {
   static const String logoutFailed = 'Logout failed';
 
   // Sign In Page
-  static const String signIn = 'Sign in';
+
   static const String signInWithEmailPassword =
       'Sign in with email and password';
-  static const String goAnonymous = 'Go anonymous';
-  static const String or = 'or';
+  static const String goAnonymous = '앱 둘러보기';
   static const String signInFailed = 'Sign in failed';
 
   // Home page

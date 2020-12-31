@@ -1,9 +1,7 @@
-import 'dart:async';
-
-import 'package:firestore_service/firestore_service.dart';
 import 'package:meta/meta.dart';
-
-import 'firestore_path.dart';
+// import 'dart:async';
+// import 'package:firestore_service/firestore_service.dart';
+// import 'firestore_path.dart';
 
 String documentIdFromCurrentDate() => DateTime.now().toIso8601String();
 
@@ -12,7 +10,7 @@ class FirestoreDatabase {
       : assert(uid != null, 'Cannot create FirestoreDatabase with null uid');
   final String uid;
 
-  final _service = FirestoreService.instance;
+  //final _service = FirestoreService.instance;
 
   // Future<void> setJob(Job job) => _service.setData(
   //       path: FirestorePath.job(uid, job.id),

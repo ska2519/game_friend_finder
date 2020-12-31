@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "480349618006",
+    "project_id": "game-friend-finder",
+    "storage_bucket": "game-friend-finder.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:480349618006:android:278d939795a199a874e0f7",
+        "android_client_info": {
+          "package_name": "com.ska.game_friend_finder"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "480349618006-7jjlk3jlmvqs6vfucvqca2kraeh4mfa4.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.ska.game_friend_finder",
+            "certificate_hash": "1174cc79478dd935ebce11dea70475700c59c34a"
+          }
+        },
+        {
+          "client_id": "480349618006-te0pblv3k0nouc8odgh5gv97baabt6ed.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCXCIaYYCgokkLZrs2tsd_EjKItP3C76t0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "480349618006-te0pblv3k0nouc8odgh5gv97baabt6ed.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -8,9 +8,11 @@ class LikePage extends StatefulWidget {
 class _LikePageState extends State<LikePage> {
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Center(
-        child: Text('LikePage'),
+    return Scaffold(
+      body: Container(
+        child: Center(
+          child: Text('LikePage'),
+        ),
       ),
     );
   }
