@@ -45,6 +45,9 @@ class MyApp extends StatelessWidget {
             return didCompleteOnboarding ? SignInPage() : OnboardingPage();
           },
         ),
+
+        //TODO: user.userporfile == null 이면 setting Profile Page else HomePage()
+
         signedInBuilder: (_) => HomePage(),
       ),
       onGenerateRoute: (settings) => AppRouter.onGenerateRoute(settings),
