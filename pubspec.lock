@@ -13,7 +13,7 @@ packages:
     description:
       path: "packages/alert_dialogs"
       ref: HEAD
-      resolved-ref: bd033049c0ee267f26f5566e057dd2c0f888b26d
+      resolved-ref: "8cca2f92a55b9a64c387df5da8be29a7cf5c7d23"
       url: "https://github.com/ska2519/codewithandrea_flutter_packages"
     source: git
     version: "0.1.0"
@@ -141,7 +141,7 @@ packages:
     description:
       path: "packages/custom_buttons"
       ref: HEAD
-      resolved-ref: bd033049c0ee267f26f5566e057dd2c0f888b26d
+      resolved-ref: "8cca2f92a55b9a64c387df5da8be29a7cf5c7d23"
       url: "https://github.com/ska2519/codewithandrea_flutter_packages"
     source: git
     version: "0.0.1"
@@ -150,7 +150,7 @@ packages:
     description:
       path: "packages/email_password_sign_in_ui"
       ref: HEAD
-      resolved-ref: bd033049c0ee267f26f5566e057dd2c0f888b26d
+      resolved-ref: "8cca2f92a55b9a64c387df5da8be29a7cf5c7d23"
       url: "https://github.com/ska2519/codewithandrea_flutter_packages"
     source: git
     version: "0.2.0"
@@ -222,7 +222,7 @@ packages:
     description:
       path: "packages/firestore_service"
       ref: HEAD
-      resolved-ref: bd033049c0ee267f26f5566e057dd2c0f888b26d
+      resolved-ref: "8cca2f92a55b9a64c387df5da8be29a7cf5c7d23"
       url: "https://github.com/ska2519/codewithandrea_flutter_packages"
     source: git
     version: "0.1.0"
@@ -616,7 +616,7 @@ packages:
     description:
       path: "packages/string_validators"
       ref: HEAD
-      resolved-ref: bd033049c0ee267f26f5566e057dd2c0f888b26d
+      resolved-ref: "8cca2f92a55b9a64c387df5da8be29a7cf5c7d23"
       url: "https://github.com/ska2519/codewithandrea_flutter_packages"
     source: git
     version: "0.0.1"

@@ -1,6 +1,6 @@
 name: game_friend_finder
 description: Flutter with Firebase project.
-publish_to: 'none' 
+publish_to: "none"
 version: 1.0.0+1
 
 environment:
@@ -37,8 +37,7 @@ dependencies:
   flutter_riverpod: ^0.12.1
   shared_preferences: ^0.5.12+4
   intl: ^0.16.1
-  flutter_svg: ^0.19.2+1  
-
+  flutter_svg: ^0.19.2+1
 
 dev_dependencies:
   flutter_test:
@@ -60,33 +59,4 @@ flutter:
         - asset: fonts/NanumGothic-Bold.ttf
           weight: 700
         - asset: fonts/NanumGothic-ExtraBold.ttf
-          weight: 800 
-  
-  
-  
-
-  
-  
-
-  
-  
-
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
+          weight: 800

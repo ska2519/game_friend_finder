@@ -1,5 +1,5 @@
 class Strings {
-  static const String gameFrindFinder = '게임 친구 찾기';
+  static const String gameFrindFinder = '게임친구찾기';
   // Generic strings
   static const String ok = 'OK';
   static const String cancel = 'Cancel';

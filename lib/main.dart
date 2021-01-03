@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:game_friend_finder/app/home/profile/create_profile_page.dart';
+import 'package:game_friend_finder/constants/colors.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
@@ -32,8 +34,8 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        primaryColor: const Color(0xFFF1E3C4),
-        accentColor: const Color(0xFF4A433B),
+        primaryColor: primaryColor,
+        accentColor: accentColor,
         fontFamily: 'Nanum',
         primarySwatch: Colors.blue,
       ),
@@ -48,7 +50,7 @@ class MyApp extends StatelessWidget {
 
         //TODO: user.userporfile == null 이면 setting Profile Page else HomePage()
 
-        signedInBuilder: (_) => HomePage(),
+        signedInBuilder: (_) => CreateProfilePage(),
       ),
       onGenerateRoute: (settings) => AppRouter.onGenerateRoute(settings),
     );
