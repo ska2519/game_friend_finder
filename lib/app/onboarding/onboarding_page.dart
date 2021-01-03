@@ -16,7 +16,7 @@ class OnboardingPage extends StatelessWidget {
     return Scaffold(
       body: SafeArea(
         child: Padding(
-          padding: const EdgeInsets.all(33.0),
+          padding: const EdgeInsets.all(33),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -49,14 +49,9 @@ class OnboardingPage extends StatelessWidget {
               CustomRaisedButton(
                 onPressed: () => onGetStarted(context),
                 color: Colors.indigo,
+                textColor: Colors.white,
                 borderRadius: 30,
-                child: Text(
-                  '동의합니다',
-                  style: Theme.of(context)
-                      .textTheme
-                      .headline5
-                      .copyWith(color: Colors.white),
-                ),
+                child: Text('동의합니다', style: TextStyle(fontSize: 23)),
               ),
             ],
           ),

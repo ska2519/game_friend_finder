@@ -50,10 +50,10 @@ class _CreateProfilePageState extends State<CreateProfilePage> {
                 decoration: const InputDecoration.collapsed(
                     hintText: '${Strings.gameFrindFinder} 프로필에 표시되는 이름',
                     hintStyle:
-                        const TextStyle(fontSize: 17.0, color: Colors.grey),
+                        const TextStyle(fontSize: 17, color: Colors.grey),
                     border: UnderlineInputBorder()),
                 keyboardAppearance: Brightness.light,
-                style: const TextStyle(fontSize: 20.0, color: Colors.black),
+                style: const TextStyle(fontSize: 20, color: Colors.black),
                 onChanged: (name) => setState(() => _name = name),
               ),
               Text(
