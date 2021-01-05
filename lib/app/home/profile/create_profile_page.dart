@@ -1,5 +1,6 @@
 import 'package:custom_buttons/custom_buttons.dart';
 import 'package:flutter/material.dart';
+import 'package:game_friend_finder/app/home/profile/set_gender.dart';
 import 'package:game_friend_finder/constants/colors.dart';
 import 'package:line_awesome_flutter/line_awesome_flutter.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -61,7 +62,8 @@ class _CreateProfilePageState extends State<CreateProfilePage> {
                 style: Theme.of(context).textTheme.bodyText2,
               ),
               CustomRaisedButton(
-                onPressed: _name.length > 3 ? _createProfile : null,
+                onPressed: _name.length >=
+                 3 ? _submitNext : null,
                 color: Colors.indigo,
                 disableColor: Colors.grey[300],
                 textColor: Colors.white,
@@ -93,8 +95,13 @@ class _CreateProfilePageState extends State<CreateProfilePage> {
   //     comment: _comment,
   //   );
   // }
+  _submitNext() {
+    Navigator.push(
+        context, MaterialPageRoute(builder: (context) => SetGender()));
+  }
+
   //method도 function 중 하나
-  Future<void> _createProfile() async {
+  Future _createProfile() async {
     final database = context.read(databaseProvider);
     await database.setUserProfile(UserProfile(
       name: _name,
