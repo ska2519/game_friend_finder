@@ -10,7 +10,8 @@ class SetBirthday extends StatefulWidget {
 
 class _SetBirthdayState extends State<SetBirthday> {
   String _birthday = '';
-  final TextEditingController _textController = TextEditingController();
+  String _label = 'YYYY/MM/DD';
+  final _textController = TextEditingController();
 
   _submitNext() => Navigator.push(
       context, MaterialPageRoute(builder: (context) => SetBirthday()));
@@ -40,34 +41,50 @@ class _SetBirthdayState extends State<SetBirthday> {
               ),
               Column(
                 children: [
-                  TextField(
-                      textAlign: TextAlign.center,
-                      keyboardType: TextInputType.number,
-                      textInputAction: TextInputAction.done,
-                      maxLength: 8,
-                      controller: _textController,
-                      decoration: const InputDecoration(
-                          hintText: '2 0 0 0 / M M / D D',
-                          hintStyle: const TextStyle(
-                              fontSize: 17, color: Colors.grey)),
-                      style: const TextStyle(
-                        fontSize: 20,
-                        color: Colors.black,
-                        letterSpacing: 2.0,
+                  Stack(
+                    children: [
+                      Text(
+                        _label,
+                        style: const TextStyle(
+                            fontSize: 20,
+                            color: Colors.grey,
+                            letterSpacing: 9,
+                            height: 2),
                       ),
-                      onChanged: (birthday) {
-                        setState(() {
-                          _birthday = birthday;
-                          _textController.selection =
-                              TextSelection.fromPosition(TextPosition(
-                                  offset: _textController.text.length));
-                        });
-                      }),
-                  SizedBox(height: 3),
-                  Text(
-                    '나이는 공개됩니다.',
-                    style: const TextStyle(fontSize: 13, color: Colors.grey),
+                      TextField(
+                        textAlign: TextAlign.start,
+                        keyboardType: TextInputType.number,
+                        textInputAction: TextInputAction.done,
+                        maxLength: 10,
+                        controller: _textController,
+                        decoration: InputDecoration(
+                            //floatingLabelBehavior: FloatingLabelBehavior.always,
+                            //labelText: _label,
+
+                            //hintText: '2 0 0 0 / M M / D D',
+                            helperText: '나이는 공개됩니다.',
+                            hintStyle: const TextStyle(
+                                fontSize: 17, color: Colors.grey)),
+                        style: const TextStyle(
+                          fontSize: 20,
+                          color: Colors.black,
+                          letterSpacing: 9,
+                        ),
+                        onChanged: (birthday) {
+                          setState(() {
+                            print(
+                                '_textController.text: ${_textController.text}');
+                            //_label = _textController.text;
+                            _birthday = birthday;
+                            _textController.selection =
+                                TextSelection.fromPosition(TextPosition(
+                                    offset: _textController.text.length));
+                          });
+                        },
+                      ),
+                    ],
                   ),
+                  SizedBox(height: 3),
                 ],
               ),
               CustomRaisedButton(

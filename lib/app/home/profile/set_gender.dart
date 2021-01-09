@@ -29,7 +29,7 @@ class _SetGenderState extends State<SetGender> {
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
               Text(
-                '내 닉네임:',
+                '내 성별:',
                 style: Theme.of(context).textTheme.headline4,
               ),
             ],

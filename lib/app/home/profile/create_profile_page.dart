@@ -37,6 +37,7 @@ class _CreateProfilePageState extends State<CreateProfilePage> {
                 style: Theme.of(context).textTheme.headline4,
               ),
               TextField(
+                  autofocus: true,
                   keyboardType: TextInputType.text,
                   textInputAction: TextInputAction.done,
                   maxLength: 10,
