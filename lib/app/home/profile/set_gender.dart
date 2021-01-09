@@ -14,13 +14,25 @@ class _SetGenderState extends State<SetGender> {
       appBar: AppBar(
         backgroundColor: appbarColor,
         elevation: 0,
-        leading: Icon(LineAwesomeIcons.angle_left, color: Colors.grey),
+        leading: Builder(
+            builder: (context) => IconButton(
+                  icon: const Icon(LineAwesomeIcons.angle_left,
+                      color: Colors.grey),
+                  onPressed: () => Navigator.pop(context),
+                )),
       ),
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.all(23),
           child: Column(
-            children: [],
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              Text(
+                '내 닉네임:',
+                style: Theme.of(context).textTheme.headline4,
+              ),
+            ],
           ),
         ),
       ),

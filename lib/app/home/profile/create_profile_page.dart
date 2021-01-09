@@ -1,8 +1,7 @@
 import 'package:custom_buttons/custom_buttons.dart';
 import 'package:flutter/material.dart';
-import 'package:game_friend_finder/app/home/profile/set_gender.dart';
+import 'package:game_friend_finder/app/home/profile/set_birthday.dart';
 import 'package:game_friend_finder/constants/colors.dart';
-import 'package:line_awesome_flutter/line_awesome_flutter.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../../constants/strings.dart';
@@ -17,21 +16,15 @@ class CreateProfilePage extends StatefulWidget {
 
 class _CreateProfilePageState extends State<CreateProfilePage> {
   String _name = '';
+  final TextEditingController _textController = TextEditingController();
+
+  _submitNext() => Navigator.push(
+      context, MaterialPageRoute(builder: (context) => SetBirthday()));
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: appbarColor,
-        elevation: 0,
-        leading: Builder(
-            builder: (context) => IconButton(
-                  icon: Icon(LineAwesomeIcons.angle_left, color: Colors.grey),
-                  onPressed: () {
-                    Navigator.pop(context);
-                  },
-                )),
-      ),
+      appBar: AppBar(backgroundColor: appbarColor, elevation: 0),
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.all(23),
@@ -44,26 +37,29 @@ class _CreateProfilePageState extends State<CreateProfilePage> {
                 style: Theme.of(context).textTheme.headline4,
               ),
               TextField(
-                keyboardType: TextInputType.text,
-                //textInputAction: TextInputAction.done,
-                maxLength: 10,
-                controller: TextEditingController(text: _name),
-                decoration: const InputDecoration.collapsed(
-                    hintText: '${Strings.gameFrindFinder} 프로필에 표시되는 이름',
-                    hintStyle:
-                        const TextStyle(fontSize: 17, color: Colors.grey),
-                    border: UnderlineInputBorder()),
-                keyboardAppearance: Brightness.light,
-                style: const TextStyle(fontSize: 20, color: Colors.black),
-                onChanged: (name) => setState(() => _name = name),
-              ),
+                  keyboardType: TextInputType.text,
+                  textInputAction: TextInputAction.done,
+                  maxLength: 10,
+                  controller: _textController,
+                  decoration: const InputDecoration.collapsed(
+                      hintText: '${Strings.gameFrindFinder} 프로필에 표시되는 이름',
+                      hintStyle:
+                          const TextStyle(fontSize: 17, color: Colors.grey),
+                      border: UnderlineInputBorder()),
+                  style: const TextStyle(fontSize: 20, color: Colors.black),
+                  onChanged: (name) {
+                    setState(() {
+                      _name = name;
+                      _textController.selection = TextSelection.fromPosition(
+                          TextPosition(offset: _textController.text.length));
+                    });
+                  }),
               Text(
                 '${Strings.gameFrindFinder} 프로필에 표시되는 이름으로,\n이후 변경할 수 없습니다.',
                 style: Theme.of(context).textTheme.bodyText2,
               ),
               CustomRaisedButton(
-                onPressed: _name.length >=
-                 3 ? _submitNext : null,
+                onPressed: _name.length >= 3 ? _submitNext : null,
                 color: Colors.indigo,
                 disableColor: Colors.grey[300],
                 textColor: Colors.white,
@@ -95,10 +91,6 @@ class _CreateProfilePageState extends State<CreateProfilePage> {
   //     comment: _comment,
   //   );
   // }
-  _submitNext() {
-    Navigator.push(
-        context, MaterialPageRoute(builder: (context) => SetGender()));
-  }
 
   //method도 function 중 하나
   Future _createProfile() async {
