@@ -15,6 +15,7 @@ class _SetBirthdayState extends State<SetBirthday> {
 
   _submitNext() => Navigator.push(
       context, MaterialPageRoute(builder: (context) => SetBirthday()));
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -48,7 +49,7 @@ class _SetBirthdayState extends State<SetBirthday> {
                         style: const TextStyle(
                             fontSize: 20,
                             color: Colors.grey,
-                            letterSpacing: 9,
+                            letterSpacing: 13,
                             height: 2),
                       ),
                       TextField(
@@ -72,10 +73,23 @@ class _SetBirthdayState extends State<SetBirthday> {
                         ),
                         onChanged: (birthday) {
                           setState(() {
+                            _birthday = birthday;
                             print(
                                 '_textController.text: ${_textController.text}');
+                            int length = _textController.text.length;
                             //_label = _textController.text;
-                            _birthday = birthday;
+                            final textSelection = _textController.selection;
+                            print(
+                                'selection.start- 1: ${textSelection.start - 1}');
+                            print('selection.end: ${textSelection.end}');
+                            print('_label: $_label');
+
+                            _label = _label.replaceRange(
+                                textSelection.start - 1,
+                                textSelection.end,
+                                ' ');
+                            print('_label2: $_label');
+
                             _textController.selection =
                                 TextSelection.fromPosition(TextPosition(
                                     offset: _textController.text.length));
