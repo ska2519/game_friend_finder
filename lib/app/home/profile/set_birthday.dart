@@ -5,6 +5,8 @@ import 'package:intl/intl.dart';
 import 'package:line_awesome_flutter/line_awesome_flutter.dart';
 import 'package:intl/date_symbol_data_local.dart';
 
+import 'set_gender.dart';
+
 class SetBirthday extends StatefulWidget {
   @override
   _SetBirthdayState createState() => _SetBirthdayState();
@@ -29,7 +31,7 @@ class _SetBirthdayState extends State<SetBirthday> {
   }
 
   _submitNext() => Navigator.push(
-      context, MaterialPageRoute(builder: (context) => SetBirthday()));
+      context, MaterialPageRoute(builder: (context) => SetGender()));
 
   @override
   Widget build(BuildContext context) {
