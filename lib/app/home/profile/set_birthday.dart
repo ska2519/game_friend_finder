@@ -11,7 +11,6 @@ class SetBirthday extends StatefulWidget {
 }
 
 class _SetBirthdayState extends State<SetBirthday> {
-  DateTime now = DateTime.now();
   DateTime _birthDay, _maximumAgeDate, _minimumAgeDate, _initialAgeDate;
   int userMaximumAge = 80;
   int userMinimumAge = 14;
@@ -22,6 +21,8 @@ class _SetBirthdayState extends State<SetBirthday> {
   void initState() {
     super.initState();
     initializeDateFormatting('ko_KR', null);
+    DateTime now = DateTime.now();
+
     _maximumAgeDate = now.subtract(Duration(days: 365 * userMaximumAge));
     _minimumAgeDate = now.subtract(Duration(days: 365 * userMinimumAge));
     _initialAgeDate = now.subtract(Duration(days: 365 * userInitialAge));
@@ -50,7 +51,7 @@ class _SetBirthdayState extends State<SetBirthday> {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
-              Text('내 생일:', style: Theme.of(context).textTheme.headline4),
+              Text('🎂 내 생일:', style: Theme.of(context).textTheme.headline4),
               Text(_birthDayStr != null ? _birthDayStr : '생일을 선택해주세요',
                   style: const TextStyle(
                       fontSize: 17, color: Colors.black, letterSpacing: 9)),

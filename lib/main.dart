@@ -4,14 +4,12 @@ import 'package:game_friend_finder/app/home/profile/create_profile_page.dart';
 import 'package:game_friend_finder/constants/colors.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-
 import 'routing/app_router.dart';
 import 'app/home/home_page.dart';
 import 'app/home/sign_in/sign_in_page.dart';
 import 'app/auth_widget.dart';
 import 'app/onboarding/onboarding_view_model.dart';
 import 'app/onboarding/onboarding_page.dart';
-
 import 'services/shared_preferences_service.dart';
 
 void main() async {
@@ -33,6 +31,14 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      // localizationsDelegates: [
+      //   GlobalMaterialLocalizations.delegate,
+      //   GlobalWidgetsLocalizations.delegate,
+      //   GlobalCupertinoLocalizations.delegate,
+      // ],
+      // supportedLocales: [
+      //   const Locale('ko'),
+      // ],
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         primaryColor: primaryColor,
