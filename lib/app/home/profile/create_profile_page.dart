@@ -16,7 +16,7 @@ class CreateProfilePage extends StatefulWidget {
 
 class _CreateProfilePageState extends State<CreateProfilePage> {
   String _name = '';
-  final TextEditingController _textController = TextEditingController();
+  final _textController = TextEditingController();
 
   _submitNext() => Navigator.push(
       context, MaterialPageRoute(builder: (context) => SetBirthday()));
@@ -24,6 +24,7 @@ class _CreateProfilePageState extends State<CreateProfilePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false, //키보드 나올 때 OVERFLOWED 방지
       appBar: AppBar(backgroundColor: appbarColor, elevation: 0),
       body: SafeArea(
         child: Padding(
@@ -37,7 +38,6 @@ class _CreateProfilePageState extends State<CreateProfilePage> {
                 style: Theme.of(context).textTheme.headline4,
               ),
               TextField(
-                  autofocus: true,
                   keyboardType: TextInputType.text,
                   textInputAction: TextInputAction.done,
                   maxLength: 10,
@@ -48,28 +48,20 @@ class _CreateProfilePageState extends State<CreateProfilePage> {
                           const TextStyle(fontSize: 17, color: Colors.grey),
                       border: UnderlineInputBorder()),
                   style: const TextStyle(fontSize: 20, color: Colors.black),
-                  onChanged: (name) {
-                    setState(() {
-                      _name = name;
-                      _textController.selection = TextSelection.fromPosition(
-                          TextPosition(offset: _textController.text.length));
-                    });
-                  }),
+                  onChanged: (name) => setState(() => _name = name)),
               Text(
                 '${Strings.gameFrindFinder} 프로필에 표시되는 이름으로,\n이후 변경할 수 없습니다.',
                 style: Theme.of(context).textTheme.bodyText2,
               ),
               CustomRaisedButton(
-                onPressed: _name.length >= 3 ? _submitNext : null,
+                onPressed:
+                    _textController.text.length >= 3 ? _submitNext : null,
                 color: Colors.indigo,
                 disableColor: Colors.grey[300],
                 textColor: Colors.white,
                 disableTextColor: Colors.white,
                 borderRadius: 23,
-                child: Text(
-                  '계속',
-                  style: TextStyle(fontSize: 23),
-                ),
+                child: Text('계속', style: TextStyle(fontSize: 23)),
               )
             ],
           ),

@@ -17,6 +17,7 @@ import 'services/shared_preferences_service.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized(); //비동기 데이터 처리 시
   await Firebase.initializeApp(); //To initialize FlutterFire
+
   final sharedPreferences = await SharedPreferences.getInstance();
   runApp(ProviderScope(
     overrides: [
